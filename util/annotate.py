@@ -18,7 +18,7 @@ def get_maps():
         dirs[:] = [d for d in dirs if d not in exclude]
         for file in files:
             if file[len(file)-5:len(file)] == '.html':
-                maps_list.append(file)
+                maps_list.append(os.path.abspath(file))
         
     return maps_list
 def main():
