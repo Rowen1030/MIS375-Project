@@ -1,6 +1,7 @@
 
 import os
 import sys
+from classes.Annotation import Annotation
 
 """
 Script Purpose: Easily manage annotations for your interfaces
@@ -8,11 +9,11 @@ Script Purpose: Easily manage annotations for your interfaces
 
 #Constants
 #Directory Information
-maps_dir = "../interfaces/"
+maps_dir = "../../interfaces/"
 
 
 def get_annotations(map_data):
-
+    return ''
 
 def get_maps():
     exclude = set(['libs','pointclouds'])
@@ -58,7 +59,7 @@ def main():
 
     print(split_data)
 
-    if '\tviewer.setScene(sceneSG);' not in split_data:
+    if '\t\tviewer.setScene(sceneSG);' not in split_data:
         split_data.insert(split_data.index('\t\tviewer.loadGUI(() => {'),'\t\tlet sceneSG = new Potree.Scene();')
         split_data.insert(split_data.index('\t\tviewer.loadGUI(() => {'),'\t\tlet sceneLion = new Potree.Scene();')
         split_data.insert(split_data.index('\t\tviewer.loadGUI(() => {'),'\t\tviewer.setScene(sceneSG);')
