@@ -13,6 +13,8 @@ maps_dir = "../../interfaces/"
 
 
 def get_annotations(map_data):
+    test = Annotation([0,0,0],[0,0,0],'Title','Description')
+    print(test.generate_js(1))
     return ''
 
 def get_maps():
@@ -57,7 +59,7 @@ def main():
     #Parse and read file to setup scenes
     split_data = map_data.split('\n')
 
-    print(split_data)
+    ##print(split_data)
 
     if '\t\tviewer.setScene(sceneSG);' not in split_data:
         split_data.insert(split_data.index('\t\tviewer.loadGUI(() => {'),'\t\tlet sceneSG = new Potree.Scene();')
