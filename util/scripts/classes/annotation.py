@@ -34,4 +34,8 @@ class Annotation():
         return self.desc
 
     #num refers to index count of annotation
-    def generate_js(num)
+    #generate final javascript to append into html file
+    def generate_js(num):
+        
+       
+        return 'let annotation' + str(num) + ' = new Potree.Annotation({ "cameraPosition:"' + self.position + ',"title": "' + self.title + '","cameraTarget": ' + self.target + ', "description": "' + self.desc + '"}); sceneSG.annotations.add(annotation' + str(num) + '); }'
