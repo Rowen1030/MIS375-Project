@@ -54,7 +54,9 @@
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription(``);
 		viewer.loadSettingsFromURL();
-		
+		let sceneSG = new Potree.Scene();
+		let sceneLion = new Potree.Scene();
+		viewer.setScene(sceneSG)
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
 			$("#menu_appearance").next().show();
@@ -72,8 +74,30 @@
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
-		});
 		
+			{
+					let aAbout2 = new Potree.Annotation({
+						position: [32, 27, 30],
+						"cameraPosition": [32, 27, 30],
+						"cameraTarget": [32, 27, 30],
+						"title": "Test Annotation",
+						"description": `
+						Suitable annotation positions and views can be obtained by 
+						looking up the current camera position and target in the "Scene" panel, 
+						or by evaluating following lines in your browser's developer console:<br><br>
+						<code>viewer.scene.view.position</code><br>
+						<code>viewer.scene.view.getPivot()</code><br>
+						`
+					});
+					sceneSG.annotations.add(aAbout2);
+				}
+		
+		
+		
+		});
+		//p {x: 32.006960893705624, y: 27.183064465115002, z: 30.930170719272162}
+		// {x: 45.380275726318416, y: 58.04541397094725, z: 16.295315742492676}
+
 	</script>
 	
 	
