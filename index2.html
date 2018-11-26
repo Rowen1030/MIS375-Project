@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <title>PURE Subdomain</title>
@@ -7,40 +6,50 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
+/**CSS CODE**/
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
-.bgimg {
-    body: url('https://i.imgur.com/OFVhSb8.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
+.w3-row-padding img{
+  margin-bottom: 12px
+}
 .title{
-  margin-left: 15%;
+  margin-left: 10%;
 }
 .description{
 display:  flex;
 flex-direction: row;
 flex-wrap: nowrap;
 justify-content: center;
-width: 75%;
+width: 80%;
 margin: 0 auto;
 }
 
 .gif{
-  order:1;
+  /**sorts gif to leftside section**/order:1;
 }
 
+/**description under gif**/
 .clickdescrip{
   font-size: 70%;
 }
+
 .link{
   text-align: center;
 }
+
+/**Adjust Description/Context**/
 .text{
-  order:2;
-  margin-top: 10%;
+  /**sorts description to rightside section**/order:2;
+  margin-top: 0%;
+}
+.robotdescrip{
+order:1;
+text-align: left;
+margin-left: 13%;
+margin-right: 10%;
 }
 
 .contactinfo{
@@ -50,6 +59,8 @@ margin: 0 auto;
 </style>
 <body class="w3-black">
 
+
+<!--HTML CODE-->
 <!-- Page Content -->
 <div class="w3-padding-large main" id="main">
   <!-- Header/Home -->
@@ -64,55 +75,83 @@ margin: 0 auto;
     <!--h1 class="w3-jumbo"><span class="w3-hide-small">Stone Aerospace</h1>
     <p>Our Robots</p>-->
   <div class="w3-display-middle">
+    <!--Title-->
     <h1 class="w3-jumbo w3-animate-top">3D Visualization</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center">Our Missions</p>
   </div>
-   <!--Background Image--> <img src="images/homepagebanner.jpg" alt="boy" class="w3-image" width="992" height="1108">
+
+  <!--Background Image--> <img src="https://i.imgur.com/QbpTBMK.jpg" alt="boy" class="w3-image" width="992" height="1108">
   </header>
 
   <!-- About Section -->
-    <!--<p>
-<a href="http://potree.org/potree/examples/showcase/dechen_cave.html">
-<img border="0" alt="robot1" src="http://stoneaerospace.com/wp-content/uploads/2016/05/SPINDLErendering_small.jpg" width="200" height="200" align="left">
-</a>
-</p>-->
-    <!--<a><img src="https://steamusercontent-a.akamaihd.net/ugc/2444768537694429795/99E38EAFB52B351E880A1C991E61B9B244D03C79/" height="100px" width="100px"></a>-->
   <div class="description" id="about"> 
     <div class="gif">
       <div class="title">
+        <!--Mission Title-->
           <h2 class="w3-text-light-grey">Peacock Springs</h2>
           <hr style="width: 80%" class="w3-opacity">
       </div>
-      <!--Map link--><a href="/potree/interfaces/peacocksprings/PeacockSprings.html" target="_blank">
-        <!--3D gif--><img src="https://steamusercontent-a.akamaihd.net/ugc/2444768537694429795/99E38EAFB52B351E880A1C991E61B9B244D03C79/" height="250px" width="350px"></a>
-      </a>
+        <!--Map link-->
+        <a href="http://104.154.228.16/potree/interfaces/peacocksprings/PeacockSprings.html" target="_blank">
+        <!--3D gif-->
+        <img src="https://i.imgur.com/h4awn5F.gif" height="250px" width="350px">
       <div class="link">
-        <p class="clickdescrip">(Click gif for 3D interaction!)</p>
+        <p class="clickdescrip">(Click gif for 3D interaction!)</p></a>
       </div>
     </div>
     <div class="text">
     <p>
-      <!--State-->Florida <br />
-      <!--Date-->Date <br />
-      <!--Size-->Size <br />
+      <!--Location & Link-->
+      <a href = "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park">Suwanee County, Florida </a><br />
+        <!--Geo Coordinates-->         
+          30°07’21” N
+          83°07’57” W <br />
+      <!--Date-->
+      October, 2017 <br />
+      <!--Robot Name--> 
+      Robot: <a href = "https://youtu.be/rLQBeba66PI">Sunfish</a><br />
       <br />
-      <!--Description-->Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat 
+      <!--Mission Description-->Northern Florida is home to one of the most popular cave diving areas in the world. 
+      The limestone in this region is rich with sinkholes, springs, and caves. 
+      Warm, crystal clear water—and the lure of the unknown—inspire cave divers to explore these features. 
+      Cave diving in the area began in the 1950s and by the 1960s and 1970s north Florida was at the forefront of the scene for this new sport. 
+      Many standard cave diving techniques and safety practices were first developed in Florida, 
+      and much of the equipment that allows divers to push the limits of human exploration was pioneered here as well. 
+      Peacock Springs, in the heart of Florida’s “Cave Country,” is a complex labyrinth of flooded cave passages. 
+      It’s one of the longest underwater caves systems in the United States and, to this day, 
+      many open-water divers receive their first cave diving training here. 
+      Given all of this history, what better place could we choose to test a robot with aspirations of becoming a cave diver? 
     </div>
   </div>
+  <!--Robot Description/Background-->
+  <div class="robotdescrip">
+      
+      SUNFISH is a person-portable, hovering vehicle with built-in precision navigation and control, 
+      multibeam sonar mapping, imaging, and CTD capabilities. 
+      We have developed capabilities for performing simultaneous localization and mapping (SLAM), 
+      exploration, path planning, and precision docking. 
+      In October 2017 we ran a series of tests and demonstrations in the unstructured labyrinthine cave environment of Peacock Springs. 
+      SUNFISH was able to autonomously explore this environment, creating a real-time map which it used to navigate through the cave. 
+      SUNFISH penetrated 120 m into the Peacock 1 cave site, reaching a second cave entrance called “Pothole Sink.” 
+      The robot was then able to autonomously find its way back to the starting point using the map it had just created. 
+
+      The capabilities developed for SUNFISH have direct application to general inspection, 
+      monitoring, and survey tasks, as well as providing a basis for the types of autonomous vehicles that will explore where humans cannot go.
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+
 <!--Section: Contact Info-->
   <div class="contactinfo">
     <h2 class="w3-text-light-grey">Contact Us</h2>
     <hr style="width:17%" class="w3-opacity">
     <div class="w3-section">
         <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, US</p>
-        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: (512)-555-5555</p>
         <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: test@stoneaerospace.com</p>
     </div>
   </div>
 <!-- END PAGE CONTENT -->
-</div>
-</body>
-</html>
+
