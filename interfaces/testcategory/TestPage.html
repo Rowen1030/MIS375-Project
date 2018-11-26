@@ -72,6 +72,8 @@
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
+			viewer.scene.annotations.add(new Potree.Annotation({position:[1,5,0],"cameraPosition":[0,0,0], "title":"Title", "description": "Description", "cameraTarget":[1,1,1]}));
+
 		});
 		
 	</script>
