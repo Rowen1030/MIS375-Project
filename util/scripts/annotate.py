@@ -15,20 +15,24 @@ maps_dir = "../../interfaces/"
 
 def get_annotations(map_data):
     annotation_list = []
-	for line in map_data:
-		if line[0:28].strip('\t') == 'viewer.scene.annotations.add':
-			pos_string = re.search('position:\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
-			cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
-			cam_target_string = re.search('cameraTarget":\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
-			
-			anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string], re.search((?<="title":")(?s).*?(?="), line), re.search((?<="description":")(?s).*?(?="), line), [int(x) for x in cam_target_string_string])
-			print(anno.generate_js)
-	test = Annotation([0,0,0],[0,0,0],[1,1,1],'Title','Description')
+    for line in map_data:
+        if re.match('viewer.scene.annotations.add',line.strip('\t')):
+            print(line)
+            pos_string = re.search('position:\[\d*,\d*,\d*\]', line).group(0).strip('position:[').strip(']').split(',')
+            cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\d*\]', line).group(0).strip('cameraPosition":[').strip(']').split(',')
+            cam_target_string = re.search('cameraTarget":\[\d*,\d*,\d*\]', line).group(0).strip('cameraTarget":[').strip(']').split(',')
+            anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string],[int(x) for x in cam_target_string], re.search('(?<="title":")(?s).*?(?=")', line).group(0), re.search('(?<="description":")(?s).*?(?=")', line).group(0),map_data.index(line))
+            print(anno.generate_js(1))
+            annotation_list.append(anno)
     
-	print(test.generate_js(1))
 
+    return annotation_list
 
-    return ''
+def annotations_menu(annotations_list):
+    print('---------------------------------------------------------------------\n')
+    print('Enter 0 to add a new Annotation or Select an Annotation to Delete. Enter the Number Besides the Name\n')
+    for anno in annotations_list:
+        print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
 
 def get_maps():
     exclude = set(['libs','pointclouds'])
@@ -72,11 +76,13 @@ def main():
     #Parse and read file to setup scenes
     split_data = map_data.split('\n')
 
-    print(split_data)
+    #print(split_data)
 
 
-    annotations_list = get_annotations(split_data)    
-      
+    annotations_list = get_annotations(split_data)
+
+    #Generate List of Annotations    
+    annotations_menu(annotations_list) 
 
 
 main()

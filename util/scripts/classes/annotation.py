@@ -53,5 +53,5 @@ class Annotation(object):
         
        
 
-        return 'viewer.scene.annotations.add(new Potree.Annotation({position:[' + ','.join(str(x) for x in self.position) + '],"cameraPosition":[' + ','.join(str(x) for x in self.cpos) + '], "title":"' + self.title + '", "description": "' + self.desc + '", "cameraTarget":[' + ','.join(str(x) for x in self.target) + ']}));'
+        return 'viewer.scene.annotations.add(new Potree.Annotation({position:[' + ','.join(str(x) for x in self.position) + '],"cameraPosition":[' + ','.join(str(x) for x in self.cpos) + '], "title":"' + self.title + '", "description":"' + self.desc + '", "cameraTarget":[' + ','.join(str(x) for x in self.target) + ']}));'
 
