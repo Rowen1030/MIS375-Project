@@ -2,12 +2,13 @@
 
 class Annotation(object):
     
-    def __init__(self,pos,cpos,target,title,desc):
+    def __init__(self,pos,cpos,target,title,desc,index):
         self.position = pos
         self.cpos = cpos
         self.target = target
         self.title = title
         self.desc = desc
+        self.index = index
 
     #pos = a list of 3 coordinates
     def set_pos(self,pos):
@@ -24,6 +25,9 @@ class Annotation(object):
     
     def set_desc(self,desc):
         self.desc = desc
+
+    def set_index(self,index):
+        self.index = index
     
     def get_pos(self):
         return self.position
@@ -39,6 +43,9 @@ class Annotation(object):
 
     def get_desc(self):
         return self.desc
+    
+    def get_index(self):
+        return self.index
 
     #num refers to index count of annotation
     #generate final javascript to append into html file
