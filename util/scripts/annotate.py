@@ -31,8 +31,13 @@ def get_annotations(map_data):
 def annotations_menu(annotations_list):
     print('---------------------------------------------------------------------\n')
     print('Enter 0 to add a new Annotation or Select an Annotation to Delete. Enter the Number Besides the Name\n')
+    print('\t[0]\tAdd New Annotation')
     for anno in annotations_list:
         print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
+
+def get_annotation():
+    
+    return ''
 
 def get_maps():
     exclude = set(['libs','pointclouds'])
@@ -81,8 +86,17 @@ def main():
 
     annotations_list = get_annotations(split_data)
 
-    #Generate List of Annotations    
-    annotations_menu(annotations_list) 
+    #Generate List of Annotations
+    select_anno = -2
+    while(select_anno not in range(-1,len(annotations_list)+1)):
+        try:    
+            annotations_menu(annotations_list)
+            select_anno = int(input("Enter Selection (-1 to quit): " ))
+            if select_anno not in range(-1,len(annotations_list)):
+                print('Error: Invalid Number Choice\n') 
+        except:
+            print('Error: Invalid Number Choice\n')
 
-
+    if select_anno = 0:
+        new_annotation = get_annotation()
 main()
