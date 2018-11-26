@@ -45,7 +45,6 @@
 	<script>
 	
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-		
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
 		viewer.setPointBudget(1*1000*1000);
@@ -54,9 +53,6 @@
 		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription(``);
 		viewer.loadSettingsFromURL();
-		let sceneSG = new Potree.Scene();
-		let sceneLion = new Potree.Scene();
-		viewer.setScene(sceneSG)
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
 			$("#menu_appearance").next().show();
@@ -78,8 +74,8 @@
 			{
 					let aAbout2 = new Potree.Annotation({
 						position: [32, 27, 30],
-						"cameraPosition": [32, 27, 30],
-						"cameraTarget": [32, 27, 30],
+						"cameraPosition": [32.2, 27.4, 30.1],
+						"cameraTarget": [32.6, 27.1, 30.4],
 						"title": "Test Annotation",
 						"description": `
 						Suitable annotation positions and views can be obtained by 
@@ -89,9 +85,21 @@
 						<code>viewer.scene.view.getPivot()</code><br>
 						`
 					});
-					sceneSG.annotations.add(aAbout2);
+					viewer.scene.annotations.add(aAbout2);
+					
 				}
-		
+
+{
+ let annotation1 = new Potree.Annotation({
+        "cameraPosition":[0,0,0],
+        "title": "Title",
+        
+        "description": "Description"
+        });
+        viewer.scene.annotations.add(annotation1);
+ }
+
+viewer.scene.annotations.add(new Potree.Annotation({position:[1,5,0],"cameraPosition":[0,0,0], "title":"Title", "description": "Description", "cameraTarget":[1,1,1]}));
 		
 		
 		});

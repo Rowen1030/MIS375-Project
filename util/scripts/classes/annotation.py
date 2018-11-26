@@ -2,8 +2,9 @@
 
 class Annotation(object):
     
-    def __init__(self,pos,target,title,desc):
+    def __init__(self,pos,cpos,target,title,desc):
         self.position = pos
+        self.cpos = cpos
         self.target = target
         self.title = title
         self.desc = desc
@@ -11,6 +12,9 @@ class Annotation(object):
     #pos = a list of 3 coordinates
     def set_pos(self,pos):
         self.position = pos
+
+    def set_cpos(self,cpos):
+        self.cpos=cpos
 
     def set_target(self,target):
         self.target = target
@@ -27,6 +31,9 @@ class Annotation(object):
     def get_target(self):
         return self.target
 
+    def get_cpos(self):
+        return self.cpos
+
     def get_title(self):
         return self.title
 
@@ -38,4 +45,6 @@ class Annotation(object):
     def generate_js(self,num):
         
        
-        return '{\n let annotation' + str(num) + ' = new Potree.Annotation({ \n\t"cameraPosition:"[' + ','.join(str(x) for x in self.position) + '],"\n\ttitle": "' + self.title + '","\n\tcameraTarget": [' + ','.join(str(x) for x in self.target) + '], "\n\tdescription": "' + self.desc + '"\n\t}); \n\tsceneSG.annotations.add(annotation' + str(num) + ');\n }'
+
+        return 'viewer.scene.annotations.add(new Potree.Annotation({position:[' + ','.join(str(x) for x in self.position) + '],"cameraPosition":[' + ','.join(str(x) for x in self.cpos) + '], "title":"' + self.title + '", "description": "' + self.desc + '", "cameraTarget":[' + ','.join(str(x) for x in self.target) + ']}));'
+
