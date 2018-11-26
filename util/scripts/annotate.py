@@ -1,6 +1,7 @@
 
 import os
 import sys
+import re
 from classes.Annotation import Annotation
 
 """
@@ -13,8 +14,18 @@ maps_dir = "../../interfaces/"
 
 
 def get_annotations(map_data):
-    test = Annotation([0,0,0],[0,0,0],[1,1,1],'Title','Description')
-    print(test.generate_js(1))
+    annotation_list = []
+	for line in map_data:
+		if line[0:28].strip('\t') == 'viewer.scene.annotations.add':
+			pos_string = re.search('position:\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
+			cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
+			cam_target_string = re.search('cameraTarget":\[\d*,\d*,\*d*\], line).strip('position:[').strip(']').split(',')
+			
+			anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string], re.search((?<="title":")(?s).*?(?="), line), re.search((?<="description":")(?s).*?(?="), line), [int(x) for x in cam_target_string_string])
+			print(anno.generate_js)
+	test = Annotation([0,0,0],[0,0,0],[1,1,1],'Title','Description')
+    
+	print(test.generate_js(1))
 
 
     return ''
@@ -61,7 +72,7 @@ def main():
     #Parse and read file to setup scenes
     split_data = map_data.split('\n')
 
-    ##print(split_data)
+    print(split_data)
 
 
     annotations_list = get_annotations(split_data)    
