@@ -2,7 +2,7 @@
 import os
 import sys
 import re
-from classes.Annotation import Annotation
+from classes.annotation import Annotation
 
 """
 Script Purpose: Easily manage annotations for your interfaces
@@ -22,7 +22,7 @@ def get_annotations(map_data):
             cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\d*\]', line).group(0).strip('cameraPosition":[').strip(']').split(',')
             cam_target_string = re.search('cameraTarget":\[\d*,\d*,\d*\]', line).group(0).strip('cameraTarget":[').strip(']').split(',')
             anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string],[int(x) for x in cam_target_string], re.search('(?<="title":")(?s).*?(?=")', line).group(0), re.search('(?<="description":")(?s).*?(?=")', line).group(0),map_data.index(line))
-            print(anno.generate_js(1))
+            #print(anno.generate_js(1))
             annotation_list.append(anno)
     
 
@@ -36,8 +36,83 @@ def annotations_menu(annotations_list):
         print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
 
 def get_annotation():
+
+    is_num=False
+    while not is_num:
+        try:    
+            anno_X = int(input('Enter the X value of your annotation position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
     
-    return ''
+    is_num=False
+    while not is_num:
+        try:    
+            anno_Y = int(input('Enter the Y value of your annotation position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            anno_Z = int(input('Enter the Z value of your annotation position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            cam_X = int(input('Enter the X value of your Camera Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            cam_Y = int(input('Enter the Y value of your Camera Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            cam_Z = int(input('Enter the Z value of your Camera Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+    
+    anno_title = input('Enter the title of your annotation: ')
+    anno_desc = input('Enter the description of your annotation: ')
+    
+    is_num=False
+    while not is_num:
+        try:    
+            camTarg_X = int(input('Enter the X value of your Camera Target Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            camTarg_Y = int(input('Enter the Y value of your Camera Target Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    is_num=False
+    while not is_num:
+        try:    
+            camTarg_Z = int(input('Enter the Z value of your Camera Target Position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+
+    return Annotation([anno_X,anno_Y,anno_Z],[cam_X,cam_Y,cam_Z],[camTarg_X,camTarg_Y,camTarg_Z],anno_title,anno_desc,5)
 
 def get_maps():
     exclude = set(['libs','pointclouds'])
@@ -97,6 +172,12 @@ def main():
         except:
             print('Error: Invalid Number Choice\n')
 
-    if select_anno = 0:
+    if select_anno == 0:
         new_annotation = get_annotation()
+        new_line = new_annotation.generate_js()
+        split_data.insert(split_data.index("\t\t\tviewer.fitToScreen();")+1,new_line)
+        new_file = '\n'.join([str(x) for x in split_data])
+        with open(maps_list[select_map],'w') as map_file:
+            map_file.write(new_file)
+        
 main()

@@ -49,7 +49,7 @@ class Annotation(object):
 
     #num refers to index count of annotation
     #generate final javascript to append into html file
-    def generate_js(self,num):
+    def generate_js(self):
         
        
 
