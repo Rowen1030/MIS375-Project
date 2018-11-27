@@ -17,7 +17,7 @@ def get_annotations(map_data):
     annotation_list = []
     for line in map_data:
         if re.match('viewer.scene.annotations.add',line.strip('\t')):
-            print(line)
+            #print(line)
             pos_string = re.search('position:\[\d*,\d*,\d*\]', line).group(0).strip('position:[').strip(']').split(',')
             cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\d*\]', line).group(0).strip('cameraPosition":[').strip(']').split(',')
             cam_target_string = re.search('cameraTarget":\[\d*,\d*,\d*\]', line).group(0).strip('cameraTarget":[').strip(']').split(',')
@@ -179,5 +179,15 @@ def main():
         new_file = '\n'.join([str(x) for x in split_data])
         with open(maps_list[select_map],'w') as map_file:
             map_file.write(new_file)
-        
+    elif select_anno == -1:
+        quit()
+    else:
+        confirm = input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
+        if confirm in ['yes','YES']:
+            split_data.pop(annotations_list[select_anno-1].get_index())
+            new_file = '\n'.join([str(x) for x in split_data])
+            with open(maps_list[select_map],'w') as map_file:
+                map_file.write(new_file)
+        else:
+            quit()
 main()
