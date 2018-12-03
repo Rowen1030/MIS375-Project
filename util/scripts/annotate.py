@@ -18,9 +18,9 @@ def get_annotations(map_data):
     for line in map_data:
         if re.match('viewer.scene.annotations.add',line.strip('\t')):
             #print(line)
-            pos_string = re.search('position:\[\d*,\d*,\d*\]', line).group(0).strip('position:[').strip(']').split(',')
-            cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\d*\]', line).group(0).strip('cameraPosition":[').strip(']').split(',')
-            cam_target_string = re.search('cameraTarget":\[\d*,\d*,\d*\]', line).group(0).strip('cameraTarget":[').strip(']').split(',')
+            pos_string = re.search('(?<=position:\[)(?s).*?(?=])',line).group(0).split(',')
+            cam_pos_string = re.search('(?<=cameraPosition":\[)(?s).*?(?=])',line).group(0).split(',')
+            cam_target_string = re.search('(?<=cameraTarget":\[)(?s).*?(?=])',line).group(0).split(',')
             anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string],[int(x) for x in cam_target_string], re.search('(?<="title":")(?s).*?(?=")', line).group(0), re.search('(?<="description":")(?s).*?(?=")', line).group(0),map_data.index(line))
             #print(anno.generate_js(1))
             annotation_list.append(anno)
