@@ -167,7 +167,7 @@ def main():
         try:    
             annotations_menu(annotations_list)
             select_anno = int(input("Enter Selection (-1 to quit): " ))
-            if select_anno not in range(-1,len(annotations_list)):
+            if select_anno not in range(-1,len(annotations_list)+1):
                 print('Error: Invalid Number Choice\n') 
         except:
             print('Error: Invalid Number Choice\n')
