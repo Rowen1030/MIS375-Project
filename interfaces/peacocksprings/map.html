@@ -77,15 +77,17 @@
 			scene.addPointCloud(pointcloud);
 
 			let volume = new Potree.Volume();
-			volume.position.set(50.11, 60.94, -20.50);
+			volume.position.set(50.11, 60.94, -20.90);
 			volume.scale.set(95.08, 110.07, 8.41);
+			volume.rotation.set(0.00,-0.05,0.00);
 			volume.clip = true;
 			scene.addVolume(volume);
 
 
 			
 			viewer.fitToScreen();
-
+			viewer.scene.annotations.add(new Potree.Annotation({position:[84.0,104.0,-20.0],"cameraPosition":[85.49,119.28,-17.32], "title":"Entrance", "description":"This is the entrance", "cameraTarget":[84.0,104.0,-20.0]}));
+			viewer.scene.annotations.add(new Potree.Annotation({position:[14.218,24.079,-20.366],"cameraPosition":[11.75,20.66,-18.35], "title":"Pothole Sink", "description":"This is the pothole sink", "cameraTarget":[14.218,24.079,-20.366]}));
 
 		});
 		
