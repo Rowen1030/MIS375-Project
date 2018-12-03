@@ -18,10 +18,10 @@ def get_annotations(map_data):
     for line in map_data:
         if re.match('viewer.scene.annotations.add',line.strip('\t')):
             #print(line)
-            pos_string = re.search('position:\[\d*,\d*,\d*\]', line).group(0).strip('position:[').strip(']').split(',')
-            cam_pos_string = re.search('cameraPosition":\[\d*,\d*,\d*\]', line).group(0).strip('cameraPosition":[').strip(']').split(',')
-            cam_target_string = re.search('cameraTarget":\[\d*,\d*,\d*\]', line).group(0).strip('cameraTarget":[').strip(']').split(',')
-            anno = Annotation([int(x) for x in pos_string], [int(x) for x in cam_pos_string],[int(x) for x in cam_target_string], re.search('(?<="title":")(?s).*?(?=")', line).group(0), re.search('(?<="description":")(?s).*?(?=")', line).group(0),map_data.index(line))
+            pos_string = re.search('(?<=position:\[)(?s).*?(?=])',line).group(0).split(',')
+            cam_pos_string = re.search('(?<=cameraPosition":\[)(?s).*?(?=])',line).group(0).split(',')
+            cam_target_string = re.search('(?<=cameraTarget":\[)(?s).*?(?=])',line).group(0).split(',')
+            anno = Annotation([float(x) for x in pos_string], [float(x) for x in cam_pos_string],[float(x) for x in cam_target_string], re.search('(?<="title":")(?s).*?(?=")', line).group(0), re.search('(?<="description":")(?s).*?(?=")', line).group(0),map_data.index(line))
             #print(anno.generate_js(1))
             annotation_list.append(anno)
     
@@ -40,7 +40,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            anno_X = int(input('Enter the X value of your annotation position: '))
+            anno_X = float(input('Enter the X value of your annotation position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -48,7 +48,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            anno_Y = int(input('Enter the Y value of your annotation position: '))
+            anno_Y = float(input('Enter the Y value of your annotation position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -56,7 +56,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            anno_Z = int(input('Enter the Z value of your annotation position: '))
+            anno_Z = float(input('Enter the Z value of your annotation position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -64,7 +64,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            cam_X = int(input('Enter the X value of your Camera Position: '))
+            cam_X = float(input('Enter the X value of your Camera Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -72,7 +72,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            cam_Y = int(input('Enter the Y value of your Camera Position: '))
+            cam_Y = float(input('Enter the Y value of your Camera Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -80,7 +80,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            cam_Z = int(input('Enter the Z value of your Camera Position: '))
+            cam_Z = float(input('Enter the Z value of your Camera Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -91,7 +91,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            camTarg_X = int(input('Enter the X value of your Camera Target Position: '))
+            camTarg_X = float(input('Enter the X value of your Camera Target Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -99,7 +99,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            camTarg_Y = int(input('Enter the Y value of your Camera Target Position: '))
+            camTarg_Y = float(input('Enter the Y value of your Camera Target Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
@@ -107,7 +107,7 @@ def get_annotation():
     is_num=False
     while not is_num:
         try:    
-            camTarg_Z = int(input('Enter the Z value of your Camera Target Position: '))
+            camTarg_Z = float(input('Enter the Z value of your Camera Target Position: '))
             is_num = True
         except:
             print('Error: Invalid Number Choice\n')
