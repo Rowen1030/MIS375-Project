@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.3.1.min.js"></script>
 
   <head>
 <title>Stone Aerospace Data Visualizations</title>
@@ -182,11 +183,10 @@ margin-right: 10%;
         <h2 class="w3-text-light-grey">Peacock Springs</h2>
         <hr class="w3-opacity">
         <!-- Trigger/Open The Modal -->
-        <button id="myBtn"><img src="images/peacockspringsvideo.gif" alt="Peacock Springs" width=100%></button>
+        <button onclick=buttonclick(this) class='openModal'><img src="images/peacockspringsvideo.gif" alt="Peacock Springs" width=100%></button>
 
         <!-- The Modal -->
-        <div id="myModal" class="modal">
-
+        <div class="modal" alt='test'>
         <!-- Modal content -->
           <div class="modal-content">
           <span class="close">&times;</span>
@@ -240,10 +240,10 @@ margin-right: 10%;
             <hr class="w3-opacity">
 
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
+            <button onclick=buttonclick(this) class="openModal"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div class="modal">
               <!-- Modal content -->
               <div class="modal-content">
                   <span class="close">&times;</span>
@@ -279,29 +279,84 @@ margin-right: 10%;
 
 <script> 
 // Get the modal
-var modal = document.getElementById('myModal');
+//var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-    btn.style.background='#000000';
+//var btn = document.getElementById("myBtn");
+    
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+//var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
+buttonclick = (el) => { 
+    var nextElementSibling = el.nextElementSibling;
+    var modal;
+    console.log(el)
+    console.log(nextElementSibling)
+    while(nextElementSibling) {
+      if (
+        nextElementSibling.className == 'modal'
+      )
+      {
+        modal = nextElementSibling;
+        //console.log(modal)
+        nextElementSibling.style.display = "block";
+        //nextElementSibling.style.background='#000000';
+        window.onclick= () => windowonclick(event,modal)
+        break;
+      }
+    }
+    var findspan = modal.children[0].children[0];
+    //console.log(findspan);
+    findspan.onclick = () => spanonclick(modal);
+    //console.log(findspan.onclick)
+   /* while(findspan) {
+      
+      if (
+        findspan.className == 'close'
+      )
+      {
+        
+        findspan.onclick=spanonclick(modal);
+       
+        break;
+      }
+    }
+    */
+  
+    
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+spanonclick = function(el) {
+  
+    el.style.display = "none";
+   
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+windowonclick = function(event,el) {
+    if (event.target == el) {
+        el.style.display = "none";
     }
 }
+
+setButtons = function() {
+    var buttons = document.getElementsByClassName('openModal');
+    for (var i = 0;i < buttons.length; i++) {
+      //console.log(buttons[i])
+      //console.log(buttons)
+      var el = buttons[i]
+      console.log(el)
+      el.onclick = () => buttonclick(el);
+      //console.log(el.onclick)
+
+    }
+}
+$( document ).ready(function() {
+    console.log( "ready!" );
+   // setButtons();
+});
+
 </script>
