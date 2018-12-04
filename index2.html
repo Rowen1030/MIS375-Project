@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+<title>Stone Aerospace Data Visualizations</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+/**CSS CODE**/
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 2%;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.w3-row-padding img{
+  margin-bottom: 12px
+}
+.title{
+  margin-left: 0%;
+}
+.description{
+display:  flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;
+width: 80%;
+margin: 0 auto;
+}
+
+.section-image {
+  margin: 2em;
+}
+
+hr { 
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gif{
+  /**sorts gif to leftside section**/order:1;
+}
+
+/**description under gif**/
+.clickdescrip{
+  font-size: 70%;
+}
+
+.link{
+  text-align: center;
+}
+
+/**Adjust Description/Context**/
+.text{
+  /**sorts description to rightside section**/order:2;
+  margin-top: 0%;
+}
+.robotdescrip{
+order:1;
+text-align: left;
+margin-left: 13%;
+margin-right: 10%;
+}
+
+.contactinfo{
+  margin: 17%;
+  width: 75%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #000000;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+</style>
+<body class="w3-black">
+
+
+<!--HTML CODE-->
+<!-- Page Content -->
+<div class="w3-padding-large main" id="main">
+  <!-- **Header/Home** -->
+  <header class="w3-container w3-padding-64 w3-center w3-black" id="home">
+  	<div class="w3-display-topmiddle w3-padding-xlarge w3-xlarge">
+      <!--logo redirect-->
+      <a href="http://www.stoneaerospace.com" target="_blank">
+      <!--logo image & image source-->
+      <img border="0" alt="Stone Aerospace" 
+      src="images/Stone Aerospace TRANS BGD.png" 
+        width="50"
+        height="70">
+      </a>
+    </div>
+  <div class="w3-display-middle">
+    <!--Title-->
+    <h1 class="w3-jumbo w3-animate-top">3D Visualization</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">Our Missions</p>
+  </div>
+
+  <!--Background Image--> 
+  <img src="images/StoneAeroIndexbackground.png" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+</div>
+  
+  <!-- **About Section** -->
+
+  <div class="row">
+    <div class="title">
+      <div class="column" style="background-color:rgb(0, 0, 0);text-align:center;">
+        <h2 class="w3-text-light-grey">Peacock Springs</h2>
+        <hr class="w3-opacity">
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn"><img src="images/peacockspringsvideo.gif" alt="Peacock Springs" width=100%></button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+          <div class="modal-content">
+          <span class="close">&times;</span>
+            <div class="description" id="about"> 
+                <div class="gif">
+                  <div class="title" style="text-align:center">
+                    <!--Mission Title-->
+                      <h2 class="w3-text-light-grey">Peacock Springs</h2>
+                      <hr style="width: 100%" class="w3-opacity">
+                  </div>
+                    <!--Map link-->
+                    <a href="http://104.154.228.16/interfaces/peacocksprings/map.html" target="_blank">
+                    <!--3D gif-->
+                    <img class='section-image' src="images/Sunfish3D.gif" height="250px" width="350px">
+                  <div class="link">
+                    <p class="clickdescrip">(Click gif for 3D interaction!)</p></a>
+                  </div>
+                </div>
+              
+            </div>
+              <div class="text">
+              <p>
+                <!--Location & Link-->
+                <a href = "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park" target="_blank">Suwanee County, Florida </a><br />
+                <!--Geo Coordinates-->         
+                  30°07’21” N
+                  83°07’57” W <br />
+                <!--Date-->
+                October, 2017 <br />
+                <!--Robot Name--> 
+                Robot: <a href = "https://youtu.be/rLQBeba66PI" target="_blank">Sunfish</a><br />
+                <br />
+                <!--Mission Description-->
+                Northern Florida is home to one of the most popular cave diving areas in the world. 
+                The limestone in this region is rich with sinkholes, springs, and caves. 
+                Warm, crystal clear water—and the lure of the unknown—inspire cave divers to explore these features. 
+                Cave diving in the area began in the 1950s and by the 1960s and 1970s north Florida was at the forefront of the scene for this new sport. 
+                Many standard cave diving techniques and safety practices were first developed in Florida, 
+                and much of the equipment that allows divers to push the limits of human exploration was pioneered here as well. 
+                Peacock Springs, in the heart of Florida’s “Cave Country,” is a complex labyrinth of flooded cave passages. 
+                It’s one of the longest underwater caves systems in the United States and, to this day, 
+                many open-water divers receive their first cave diving training here. 
+                Given all of this history, what better place could we choose to test a robot with aspirations of becoming a cave diver? 
+              </div>
+          </div>
+      </div>
+    </div>
+        <div class="column" style="background-color:rgb(0, 0, 0);text-align:center;">
+            <h2 class="w3-text-light-grey">West Lake Bonney</h2>
+            <hr class="w3-opacity">
+
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+  
+
+
+
+            </div>
+
+          
+        </div>
+        <div class="column" style="background-color:rgb(0, 0, 0);text-align:center;">
+            <h2 class="w3-text-light-grey">SUNFISH</h2>
+            <hr class="w3-opacity">
+
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn"><img src="images/SunfishDOPE.jpg" alt="SUNFISH" width=100%></button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+  
+
+
+
+            </div>
+
+        </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  
+  
+  
+  <br />
+  <br />
+  <br />
+  <br />
+
+<!-- **Section: Contact Info** -->
+  <div class="contactinfo">
+    <h2 class="w3-text-light-grey">Contact Us</h2>
+    <hr style="width:17%" class="w3-opacity">
+      <div class="w3-section">
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, US</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: test@stoneaerospace.com</p>
+        <p><i class="fa fa-question fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> <a href="docs/US1(3D VisualizationToolQRG).pdf" target="_blank">3D Visualization Tool Quick Reference Guide</a></p>
+      </div>
+  </div>
+<!-- END PAGE CONTENT -->
+
+<script> 
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+    btn.style.background='#000000';
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
