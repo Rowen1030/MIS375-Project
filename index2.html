@@ -47,6 +47,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .title{
   margin-left: 0%;
 }
+
+.text{
+  margin-left: auto;
+  margin-right: auto;
+  width:60%;
+}
 .description{
 display:  flex;
 flex-direction: row;
@@ -57,7 +63,7 @@ margin: 0 auto;
 }
 
 .section-image {
-  margin: 2em;
+  justify-content: center;
 }
 
 hr { 
@@ -93,7 +99,9 @@ margin-right: 10%;
 
 .contactinfo{
   margin: 17%;
-  width: 75%;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* The Modal (background) */
@@ -189,13 +197,14 @@ margin-right: 10%;
                       <h2 class="w3-text-light-grey">Peacock Springs</h2>
                       <hr style="width: 100%" class="w3-opacity">
                   </div>
+                  <div class="link">
+                      <p class="clickdescrip">(Click gif for 3D interaction!)</p></a>
+                    </div>
                     <!--Map link-->
                     <a href="http://104.154.228.16/interfaces/peacocksprings/map.html" target="_blank">
                     <!--3D gif-->
-                    <img class='section-image' src="images/Sunfish3D.gif" height="250px" width="350px">
-                  <div class="link">
-                    <p class="clickdescrip">(Click gif for 3D interaction!)</p></a>
-                  </div>
+                    <img class='section-image' src="images/CAVEFLY.gif" width=100%>
+                  
                 </div>
               
             </div>
@@ -248,44 +257,18 @@ margin-right: 10%;
 
           
         </div>
-        <div class="column" style="background-color:rgb(0, 0, 0);text-align:center;">
-            <h2 class="w3-text-light-grey">SUNFISH</h2>
-            <hr class="w3-opacity">
-
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn"><img src="images/SunfishDOPE.jpg" alt="SUNFISH" width=100%></button>
-
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Some text in the Modal..</p>
-                </div>
-  
-
-
-
-            </div>
-
-        </div>
+        
     </div>
   </div>
-  <br />
-  <br />
-  <br />
   
   
   
-  <br />
-  <br />
-  <br />
-  <br />
+  
 
 <!-- **Section: Contact Info** -->
   <div class="contactinfo">
-    <h2 class="w3-text-light-grey">Contact Us</h2>
-    <hr style="width:17%" class="w3-opacity">
+    <h2 class="w3-text-light-grey" style="text-align: center">Contact Us</h2>
+    <hr style="width:100%" class="w3-opacity">
       <div class="w3-section">
         <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, US</p>
         <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: test@stoneaerospace.com</p>
