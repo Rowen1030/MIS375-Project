@@ -28,6 +28,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     height: 300px; /* Should be removed. Only for demonstration */
 }
 
+.missiontitle {
+  font-size: 3.5vw;
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -45,6 +49,24 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     }
 
     
+}
+
+.centered{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.transbox {
+  margin: 20%;
+  opacity: .6;
 }
 
 .openModal{
@@ -159,10 +181,11 @@ margin-right: 10%;
 <!--HTML CODE-->
 
 <!-- Page Content -->
-<div class="w3-padding-large main" id="main" style="margin-bottom: -3em">
+<div class="w3-padding-large main" id="main">
   <!-- **Header/Home** -->
   <header class="w3-container w3-padding-64 w3-center w3-black" id="home">
-  	<div class="w3-display-topmiddle w3-padding-small w3-small">
+    
+  	<div class="w3-display-topmiddle w3-padding-xlarge w3-xlarge">
       <!--logo redirect-->
       <a href="http://www.stoneaerospace.com" target="_blank">
       <!--logo image & image source-->
@@ -172,17 +195,23 @@ margin-right: 10%;
         height="70">
       </a>
     </div>
-  <div class="w3-display-middle">
+  <div class="container">
     <!--Title-->
-    <h1 class="w3-xxlarge w3-animate-top">3D Visualization</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">Our Missions</p>
+    <img src="images/SunfishIndexCropped.png" alt="boy" width="100%" height="50%">
+    <div class="centered">
+      
+    <h1 class="w3-xxlarge w3-animate-top" style="font-size-adjust: 3.5vw">3D Mapping Visualizations</h1>
+    <hr style="margin:auto;width:80%">
+  </div>
+    </div>
+
+  <!--Background Image--> 
+  
+  </header>
   </div>
 </div>
-  <!--Background Image--> 
-  <img src="images/SunfishIndexCropped.png" alt="boy" class="w3-image" width="100%" height="50%">
-  </header>
-  
+<h1 style="text-align: center;margin-left:auto; margin-right:auto; font-size:2vw">Missions</h1>
+<hr style="width:10%">
   <!-- **About Section** -->
 
   <div class="row">
@@ -266,8 +295,10 @@ margin-right: 10%;
         
     </div>
   </div>
+
   
-  
+  <br>
+  <br>
   
   
 <footer style='margin:3em; '>
