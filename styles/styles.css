@@ -1,7 +1,7 @@
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 /* Create three equal columns that floats next to each other */
@@ -86,8 +86,8 @@ margin: 0 auto;
   justify-content: center;
 }
 
-body footer{
-  background: -webkit-linear-gradient(rgb(0, 0, 0), #07080a);
+body {
+  background: -webkit-linear-gradient(rgb(0, 0, 0), #273046);
   padding: 0;
   margin: 0;
 }
@@ -179,7 +179,9 @@ margin-right: 10%;
 
 
  html {
-  height: 80%;
+  height: 100%;
+  background: -webkit-linear-gradient(rgb(0, 0, 0), #171b24);
+
 }
 
 #stars {
