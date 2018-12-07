@@ -1,4 +1,4 @@
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+body, h1,h2,h3,h4,h5,h6 {font-family: 'Maven Pro', sans-serif;}
 .w3-row-padding img {margin-bottom: 12px}
 * {
     /* box-sizing: border-box; */
@@ -7,10 +7,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 33.33%;
+    width: 33%;
     padding: 2%;
     height: 300px; /* Should be removed. Only for demonstration */
 }
+
+
 
 .socialmedia{
   text-align: center;
@@ -45,6 +47,8 @@ button {
       width:100%
     }
 
+
+
     
 }
 
@@ -53,6 +57,14 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-flow: column dense;
+    margin: 2%;
 }
 
 .container {
