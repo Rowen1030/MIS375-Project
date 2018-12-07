@@ -89,6 +89,10 @@ margin: 0 auto;
   justify-content: center;
 }
 
+img {
+    z-index: 3;
+}
+
 body {
   background: -webkit-linear-gradient(rgb(0, 0, 0), #1d2435);
   padding: 0;
@@ -127,7 +131,6 @@ margin-right: 10%;
 }
 
 .contactinfo{
-  margin: 17%;
   width: 25%;
   margin-left: auto;
   margin-right: auto;
