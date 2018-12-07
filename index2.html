@@ -2,10 +2,6 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-3.3.1.min.js"></script>
-
-  <head>
-<title>Stone Aerospace Data Visualizations</title>
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles/w3.css">
@@ -27,30 +23,28 @@
   	<div class="w3-display-topmiddle w3-padding-xlarge w3-xlarge">
       <!--logo redirect-->
       <a href="http://www.stoneaerospace.com" target="_blank">
-      <!--logo image & image source-->
-      <img border="0" alt="Stone Aerospace" 
-      src="images/Stone Aerospace TRANS BGD.png" 
-        width="50"
-        height="70">
+      <!--logo image & image source **TRY NOT TO CHANGE DIMENSIONS**-->
+      <img border="0" alt="Stone Aerospace" src="images/Stone Aerospace TRANS BGD.png" width="50" height="70">
       </a>
     </div>
   <div class="container">
-    <!--Title-->
+    
     <div class='parallax'></div>
     
     <div class="centered"style="padding: 1em;background: rgb(15,15,15,.40); border-radius: 10px">
-      
+    <!--Title-->
     <h1 class="w3-xxlarge w3-animate-top" style="font-size-adjust: 3.5vw; text-align: center; -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: black;">3D Mapping Visualizations</h1>
-    <button type='button' style="background-color: rgba(16, 143, 132, 0.7); border-width: 0px; border-radius: 15px"><a href='#missions' style='color: #FFFFFF; text-decoration: none  '>Explore Now</a></button>
+    <button type='button' style="background-color: rgba(16, 143, 132, 0.7); border-width: 0px; border-radius: 15px">
+    <!--Explore Now Button-->
+    <a href='#missions' style='color: #FFFFFF; text-decoration: none  '>Explore Now</a></button>
   </div>
     </div>
-
-  <!--Background Image--> 
   
   </header>
   </div>
 </div>
+<!--Missions Section-->
 <h1 id='missions' style="text-align: center;margin-left:auto; margin-right:auto; margin-top: -.75em; color: #FFFFFF">Missions</h1>
 <hr style="width:95%" class="w3-opacity">
 
@@ -59,9 +53,10 @@
   <div class="row">
     <div class="title">
       <div class="column" style="text-align:center;">
+        <!--Mission Title-->
         <h3 class="w3-text-light-grey">Peacock Springs</h3>
         
-        <!-- Trigger/Open The Modal -->
+        <!-- Trigger/Open The Modal from Index Page-->
         <button onclick=buttonclick(this) class='openModal'><img src="images/peacockspringsvideo.gif" alt="Peacock Springs" width=100%></button>
 
         <!-- The Modal -->
@@ -79,7 +74,7 @@
                   <div class="link">
                       <p class="clickdescrip" style="color:#FFFFFF">(Click gif for 3D interaction!)</p></a>
                     </div>
-                    <!--Map link-->
+                    <!--3D Map link-->
                     <a href="http://104.154.228.16/interfaces/peacocksprings/map.html" target="_blank">
                     <!--3D gif-->
                     <img class='section-image' src="images/Sunfish3D.gif" width=100%>
@@ -94,7 +89,7 @@
                   83°07’57” W <br />
                 <!--Date-->
                 October, 2017 <br />
-                <!--Robot Name--> 
+                <!--Robot Name & link to robot info--> 
                 Robot: <a href = "https://youtu.be/rLQBeba66PI" target="_blank">Sunfish</a><br />
                 <br />
                 <!--Mission Description-->
@@ -112,21 +107,24 @@
           </div>
       </div>
     </div>
-        <div class="column" style="text-align:center;">
-            <h3 class="w3-text-light-grey">West Lake Bonney</h3>
-            
 
-            <!-- Trigger/Open The Modal -->
-            <button onclick=buttonclick(this) class="openModal"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
+    <!--Copy lines 55-109 & paste New Mission Section HERE-->
+    <div class="column" style="text-align:center;">
+      <!--Mission Title-->
+        <h3 class="w3-text-light-grey">West Lake Bonney</h3>
+      
+        <!-- Trigger/Open The Modal -->
+        <button onclick=buttonclick(this) class="openModal"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
 
-            <!-- The Modal -->
-            <div class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Some text in the Modal..</p>
-                </div>
-  
+        <!-- The Modal -->
+        <div class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <!--Mission Description-->
+              <p>Some text in the Modal..</p>
+            </div>
+
 
 
 
@@ -146,18 +144,25 @@
 <footer >
 <!-- **Section: Contact Info** -->
   <div class="contactinfo" style='float: center; margin-top: 2em; padding-top: 3em; width: 100%; color:#FFFFFF'>
+    <!--Contact Title-->
     <h1 class="w3-text-light-grey" style="text-align: center">Contact Us</h1>
     <hr style="width:95%" class="w3-opacity">
     <div class="row" style="margin-left:auto;margin-right: auto ">
       <div class="column"></div>
       <div class="column"  style="height: 20%">
         <div class="socialmedia">
+        <!--Headquarter-->
         <p><small><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, Texas</small></p>
+        <!--Prompt Email draft-->
         <p><small><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> <a href="mailto:contact@stoneaerospace.com">contact@stoneaerospace.com</small></p></a>
       </div>
+        <!--Social Media-->
         <div class='socialmedia' style="height: 10%;" >
+          <!--Facebook link & logo-->
           <a href="https://www.facebook.com/stoneaerospace/" target="_blank"><i class="fa fa-facebook fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a>
+          <!--Twitter link & logo-->
           <a href="https://twitter.com/StoneAerospace" target="_blank"><i class="fa fa-twitter fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i></a>
+          <!--Youtube link & logo-->
           <a href="htpps://www.youtube.com/user/StoneAerospaceInc" target="_blank"><i class="fa fa-youtube fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i></a>
         </div>
       </div>
