@@ -28,12 +28,14 @@ def get_annotations(map_data):
 
     return annotation_list
 
+
 def annotations_menu(annotations_list):
     print('---------------------------------------------------------------------\n')
     print('Enter 0 to add a new Annotation or Select an Annotation to Delete. Enter the Number Besides the Name\n')
     print('\t[0]\tAdd New Annotation')
     for anno in annotations_list:
         print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
+
 
 def get_annotation():
 
@@ -85,8 +87,8 @@ def get_annotation():
         except:
             print('Error: Invalid Number Choice\n')
     
-    anno_title = input('Enter the title of your annotation: ')
-    anno_desc = input('Enter the description of your annotation: ')
+    anno_title = raw_input('Enter the title of your annotation: ')
+    anno_desc = raw_input('Enter the description of your annotation: ')
     
     is_num=False
     while not is_num:
@@ -114,6 +116,7 @@ def get_annotation():
 
     return Annotation([anno_X,anno_Y,anno_Z],[cam_X,cam_Y,cam_Z],[camTarg_X,camTarg_Y,camTarg_Z],anno_title,anno_desc,5)
 
+
 def get_maps():
     exclude = set(['libs','pointclouds'])
     maps_list = []
@@ -124,6 +127,8 @@ def get_maps():
                 maps_list.append(os.path.join(root,file))
         
     return maps_list
+
+
 def main():
     maps_list = get_maps()
     select_map = -1
@@ -158,7 +163,6 @@ def main():
 
     #print(split_data)
 
-
     annotations_list = get_annotations(split_data)
 
     #Generate List of Annotations
@@ -183,7 +187,7 @@ def main():
     elif select_anno == -1:
         quit()
     else:
-        confirm = input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
+        confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
         if confirm in ['yes','YES','Yes']:
             split_data.pop(annotations_list[select_anno-1].get_index())
             new_file = '\n'.join([str(x) for x in split_data])
@@ -192,4 +196,5 @@ def main():
             print("Annotation deleted")
         else:
             quit()
+
 main()
