@@ -4,6 +4,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: 'Maven Pro', sans-serif;}
     /* box-sizing: border-box; */
 }
 
+.parallax {
+  background-image: url(../images/homepagebanner.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  height: 20em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
@@ -190,16 +199,6 @@ margin-right: 10%;
     text-decoration: none;
     cursor: pointer;
 }
-
-.parallax {
-    background-image: url(../images/homepagebanner.jpg);
-    background-attachment: fixed;
-    background-position: center center;
-    height: 20em;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
  html {
   height: 100%;
