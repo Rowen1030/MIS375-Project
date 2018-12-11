@@ -1,170 +1,225 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <head>
-<title>Stone Aerospace Data Visualizations</title>
-</head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="jquery-3.3.1.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="styles/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+</head>
+<body>
+    <!--HTML CODE-->
 
-<style>
-/**CSS CODE**/
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
+    <!-- Page Content -->
+    <div class="w3-padding-large main" id="main">
+        <!-- **Header/Home** -->
+        <header class="w3-container w3-padding-64 w3-center" id="home">
 
-.w3-row-padding img{
-  margin-bottom: 12px
-}
-.title{
-  margin-left: 10%;
-}
-.description{
-display:  flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: center;
-width: 80%;
-margin: 0 auto;
-}
+            <div class="w3-display-topmiddle w3-padding-xlarge w3-xlarge">
+                <!--logo redirect-->
+                <a href="http://www.stoneaerospace.com" target="_blank">
+                    <!--logo image & image source **TRY NOT TO CHANGE DIMENSIONS**-->
+                    <img border="0" alt="Stone Aerospace" src="images/Stone Aerospace TRANS BGD.png" width="50" height="70">
+                </a>
+            </div>
+            <div class="container">
 
-.section-image {
-  margin: 2em;
-}
+                <div class='parallax'></div>
 
-.gif{
-  /**sorts gif to leftside section**/order:1;
-}
+                <div class="centered" style="padding: 1em;background: rgb(15,15,15,.40); border-radius: 10px">
+                    <!--Title-->
+                    <h1 class="w3-xxlarge w3-animate-top" style="font-size-adjust: 3.5vw; text-align: center; -webkit-text-stroke-width: .5px;
+                      -webkit-text-stroke-color: black;">3D Mapping Visualizations</h1>
+                    <button type='button' style="background-color: rgba(16, 143, 132, 0.7); border-width: 0px; border-radius: 15px">
+                        <!--Explore Now Button-->
+                        <a href='#missions' style='color: #FFFFFF; text-decoration: none  '>Explore Now</a></button>
+                </div>
+            </div>
 
-/**description under gif**/
-.clickdescrip{
-  font-size: 70%;
-}
-
-.link{
-  text-align: center;
-}
-
-/**Adjust Description/Context**/
-.text{
-  /**sorts description to rightside section**/order:2;
-  margin-top: 0%;
-}
-.robotdescrip{
-order:1;
-text-align: left;
-margin-left: 13%;
-margin-right: 10%;
-}
-
-.contactinfo{
-  margin: 17%;
-  width: 75%;
-}
-</style>
-<body class="w3-black">
-
-
-<!--HTML CODE-->
-<!-- Page Content -->
-<div class="w3-padding-large main" id="main">
-  <!-- **Header/Home** -->
-  <header class="w3-container w3-padding-64 w3-center w3-black" id="home">
-  	<div class="w3-display-topmiddle w3-padding-xlarge w3-xlarge">
-      <!--logo redirect-->
-      <a href="http://www.stoneaerospace.com" target="_blank">
-      <!--logo image & image source-->
-      <img border="0" alt="Stone Aerospace" 
-      src="images/Stone Aerospace TRANS BGD.png" 
-        width="50"
-        height="70">
-      </a>
+        </header>
     </div>
-  <div class="w3-display-middle">
-    <!--Title-->
-    <h1 class="w3-jumbo w3-animate-top">3D Visualization</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">Our Missions</p>
-  </div>
-
-  <!--Background Image--> 
-  <img src="images/StoneAeroIndexbackground.png" alt="boy" class="w3-image" width="992" height="1108">
-  </header>
-</div>
-
-  <!-- **About Section** -->
-  <div class="description" id="about"> 
-    <div class="gif">
-      <div class="title">
-        <!--Mission Title-->
-          <h2 class="w3-text-light-grey">Peacock Springs</h2>
-          <hr style="width: 80%" class="w3-opacity">
-      </div>
-        <!--Map link-->
-        <a href="http://104.154.228.16/interfaces/peacocksprings/map.html" target="_blank">
-        <!--3D gif-->
-        <img class='section-image' src="images/Sunfish3D.gif" height="250px" width="350px">
-      <div class="link">
-        <p class="clickdescrip">(Click gif for 3D interaction!)</p></a>
     </div>
-  </div>
-    <div class="text">
-    <p>
-      <!--Location & Link-->
-      <a href = "https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park" target="_blank">Suwanee County, Florida </a><br />
-      <!--Geo Coordinates-->         
-        30°07’21” N
-        83°07’57” W <br />
-      <!--Date-->
-      October, 2017 <br />
-      <!--Robot Name--> 
-      Robot: <a href = "https://youtu.be/rLQBeba66PI" target="_blank">Sunfish</a><br />
-      <br />
-      <!--Mission Description-->
-      Northern Florida is home to one of the most popular cave diving areas in the world. 
-      The limestone in this region is rich with sinkholes, springs, and caves. 
-      Warm, crystal clear water—and the lure of the unknown—inspire cave divers to explore these features. 
-      Cave diving in the area began in the 1950s and by the 1960s and 1970s north Florida was at the forefront of the scene for this new sport. 
-      Many standard cave diving techniques and safety practices were first developed in Florida, 
-      and much of the equipment that allows divers to push the limits of human exploration was pioneered here as well. 
-      Peacock Springs, in the heart of Florida’s “Cave Country,” is a complex labyrinth of flooded cave passages. 
-      It’s one of the longest underwater caves systems in the United States and, to this day, 
-      many open-water divers receive their first cave diving training here. 
-      Given all of this history, what better place could we choose to test a robot with aspirations of becoming a cave diver? 
+
+    <!--Missions Section-->
+    <h1 id='missions' style="text-align: center;margin-left:auto; margin-right:auto; margin-top: -.75em; color: #FFFFFF">Missions</h1>
+    <hr style="width:95%" class="w3-opacity">
+
+    <!-- **About Section** -->
+
+    <div class="grid-container">
+            <div class="grid-item" style="text-align:center;">
+                <!--Mission Title-->
+                <h3 class="w3-text-light-grey">Peacock Springs</h3>
+
+                <!-- Trigger/Open The Modal from Index Page-->
+                <button onclick=buttonclick(this) class='openModal'><img src="images/peacockspringsvideo.gif" alt="Peacock Springs" width=100%></button>
+
+                <!-- The Modal -->
+                <div class="modal" alt='test'>
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="description" id="about">
+                            <div class="gif">
+                                <div class="title" style="text-align:center;">
+                                    <!--Mission Title-->
+                                    <h2 class="w3-text-light-grey">Peacock Springs</h2>
+                                    <hr style="width: 100%" class="w3-opacity">
+                                </div>
+                                <div class="link">
+                                    <p class="clickdescrip" style="color:#FFFFFF">(Click gif for 3D interaction!)</p>
+                                    </a>
+                                </div>
+                                <!--3D Map link-->
+                                <a href="/interfaces/peacocksprings/map.html" target="_blank">
+                                    <!--3D gif-->
+                                    <img class='section-image' src="images/Sunfish3D.gif" width=50%>
+                            </div>
+                        </div>
+                        <div class="text" style="color:#FFFFFF">
+                            <p>
+                                <!--Location & Link-->
+                                <a href="https://www.floridastateparks.org/parks-and-trails/wes-skiles-peacock-springs-state-park" target="_blank">Suwanee County, Florida </a>
+                                <br />
+                                <!--Geo Coordinates-->
+                                30°07’21” N 83°07’57” W
+                                <br />
+                                <!--Date-->
+                                October, 2017
+                                <br />
+                                <!--Robot Name & link to robot info-->
+                                Robot: <a href="https://youtu.be/rLQBeba66PI" target="_blank">Sunfish</a>
+                                <br />
+                                <br />
+                                <!--Mission Description-->
+                                Northern Florida is home to one of the most popular cave diving areas in the world. The limestone in this region is rich with sinkholes, springs, and caves. Warm, crystal clear water—and the lure of the unknown—inspire cave divers to explore these features. Cave diving in the area began in the 1950s and by the 1960s and 1970s north Florida was at the forefront of the scene for this new sport. Many standard cave diving techniques and safety practices were first developed in Florida, and much of the equipment that allows divers to push the limits of human exploration was pioneered here as well. Peacock Springs, in the heart of Florida’s “Cave Country,” is a complex labyrinth of flooded cave passages. It’s one of the longest underwater caves systems in the United States and, to this day, many open-water divers receive their first cave diving training here. Given all of this history, what better place could we choose to test a robot with aspirations of becoming a cave diver?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Copy lines 55-109 & paste New Mission Section HERE-->
+            <div class='grid-item' style="text-align:center;">
+                <!--Mission Title-->
+                <h3 class="w3-text-light-grey">West Lake Bonney</h3>
+                <!-- Trigger/Open The Modal -->
+                <button onclick=buttonclick(this) class="openModal"><img src="images/endurance.jpg" alt="West Lake Bonney" width=100%></button>
+                <!-- The Modal -->
+                <div class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <!--Mission Description-->
+                        <p>Some text in the Modal..</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
-  </div>
-  <!--Robot Description/Background-->
-  <div class="robotdescrip">
-      
-      SUNFISH is a person-portable, hovering vehicle with built-in precision navigation and control, 
-      multibeam sonar mapping, imaging, and CTD capabilities. 
-      We have developed capabilities for performing simultaneous localization and mapping (SLAM), 
-      exploration, path planning, and precision docking. 
-      In October 2017 we ran a series of tests and demonstrations in the unstructured labyrinthine cave environment of Peacock Springs. 
-      SUNFISH was able to autonomously explore this environment, creating a real-time map which it used to navigate through the cave. 
-      SUNFISH penetrated 120 m into the Peacock 1 cave site, reaching a second cave entrance called “Pothole Sink.” 
-      The robot was then able to autonomously find its way back to the starting point using the map it had just created. 
+</body>
+<footer>
+    <!-- **Section: Contact Info** -->
+    <div class="contactinfo" style='float: center; margin-top: 2em; padding-top: 3em; width: 100%; color:#FFFFFF'>
+        <!--Contact Title-->
+        <h1 class="w3-text-light-grey" style="text-align: center">Contact Us</h1>
+        <hr style="width:95%" class="w3-opacity">
+        <div class="row" style="margin-left:auto;margin-right: auto ">
+            <div class="column"></div>
+            <div class="column" style="height: 20%">
+                <div class="socialmedia">
+                    <!--Headquarter-->
+                    <p><small><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, Texas</small></p>
+                    <!--Prompt Email draft-->
+                    <p><small><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> <a href="mailto:contact@stoneaerospace.com">contact@stoneaerospace.com</small></p>
+                    </a>
+                </div>
+                <!--Social Media-->
+                <div class='socialmedia' style="height: 10%;">
+                    <!--Facebook link & logo-->
+                    <a href="https://www.facebook.com/stoneaerospace/" target="_blank"><i class="fa fa-facebook fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a>
+                    <!--Twitter link & logo-->
+                    <a href="https://twitter.com/StoneAerospace" target="_blank"><i class="fa fa-twitter fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i></a>
+                    <!--Youtube link & logo-->
+                    <a href="https://www.youtube.com/user/StoneAerospaceInc" target="_blank"><i class="fa fa-youtube fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i></a>
+                    <!--Instagram link & logo-->
+                    <a href="https://www.instagram.com/stoneaerospace/" target="_blank"><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i></a>
 
-      The capabilities developed for SUNFISH have direct application to general inspection, 
-      monitoring, and survey tasks, as well as providing a basis for the types of autonomous vehicles that will explore where humans cannot go.
-  </div>
-  <br />
-  <br />
-  <br />
-  <br />
+                </div>
+            </div>
+            <div class="column"></div>
+        </div>
 
-<!-- **Section: Contact Info** -->
-  <div class="contactinfo">
-    <h2 class="w3-text-light-grey">Contact Us</h2>
-    <hr style="width:17%" class="w3-opacity">
-    <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Austin, US</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: test@stoneaerospace.com</p>
-        <p><i class="fa fa-question fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> <a href="docs/US1(3D VisualizationToolQRG).pdf" target="_blank">3D Visualization Tool Quick Reference Guide</a></p>
-      </div>
-  </div>
-<!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</footer>
+<script>
+    // Get the modal
+    //var modal = document.getElementById('myModal');
 
+    // Get the button that opens the modal
+    //var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    //var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal 
+    buttonclick = (el) => {
+        var nextElementSibling = el.nextElementSibling;
+        var modal;
+        console.log(el)
+        console.log(nextElementSibling)
+        while (nextElementSibling) {
+            if (
+                nextElementSibling.className == 'modal'
+            ) {
+                modal = nextElementSibling;
+                //console.log(modal)
+                nextElementSibling.style.display = "block";
+                //nextElementSibling.style.background='#000000';
+                window.onclick = () => windowonclick(event, modal)
+                break;
+            }
+        }
+        var findspan = modal.children[0].children[0];
+        //console.log(findspan);
+        findspan.onclick = () => spanonclick(modal);
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spanonclick = function(el) {
+
+        el.style.display = "none";
+
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    windowonclick = function(event, el) {
+        if (event.target == el) {
+            el.style.display = "none";
+        }
+    }
+
+    setButtons = function() {
+        var buttons = document.getElementsByClassName('openModal');
+        for (var i = 0; i < buttons.length; i++) {
+            //console.log(buttons[i])
+            //console.log(buttons)
+            var el = buttons[i]
+            console.log(el)
+            el.onclick = () => buttonclick(el);
+            //console.log(el.onclick)
+
+        }
+    }
+    $(document).ready(function() {
+        console.log("ready!");
+        // setButtons();
+    });
+</script>
+
+</html>
