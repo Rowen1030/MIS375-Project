@@ -69,10 +69,12 @@ button {
 }
 
 .grid-container {
+    grid-area: grid-container;
     display: grid;
     grid-gap: 2em;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-flow: column dense;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    align-items: start;
+    align-content: start;
     margin: 2%;
 }
 
