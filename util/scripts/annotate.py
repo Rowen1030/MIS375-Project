@@ -251,7 +251,7 @@ def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data,selec
     elif choice == '2':
         
         new_title = rlinput('Edit Description: ',anno.get_desc())
-        anno.set_title(new_title)
+        anno.set_desc(new_title)
         edit_annotation(anno,annotations_list,select_anno,maps_list,split_data,select_map)
     elif choice == '3':
         is_num=False
