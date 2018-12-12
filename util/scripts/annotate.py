@@ -229,6 +229,7 @@ def edit_annotation(anno,annotations_list,select_anno):
         edit_menu(anno)
         choice = str(raw_input("Enter Choice: "))
         if choice == '-1':
+            print('quitting')
             quit()
         elif choice =='0':
             confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
