@@ -31,7 +31,7 @@ def get_annotations(map_data):
 
 def annotations_menu(annotations_list):
     print('---------------------------------------------------------------------\n')
-    print('Enter 0 to add a new Annotation or Select an Annotation to Delete. Enter the Number Besides the Name\n')
+    print('Enter 0 to add a new Annotation or Select an Annotation to Edit/Delete. Enter the Number Besides the Name\n')
     print('\t[0]\tAdd New Annotation')
     for anno in annotations_list:
         print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
@@ -40,6 +40,9 @@ def annotations_menu(annotations_list):
 def get_annotation():
 
     is_num=False
+
+    anno_title = raw_input('Enter the title of your annotation: ')
+    anno_desc = raw_input('Enter the description of your annotation: ')
     while not is_num:
         try:    
             anno_X = float(input('Enter the X value of your annotation position: '))
@@ -87,8 +90,7 @@ def get_annotation():
         except:
             print('Error: Invalid Number Choice\n')
     
-    anno_title = raw_input('Enter the title of your annotation: ')
-    anno_desc = raw_input('Enter the description of your annotation: ')
+   
     
     """ is_num=False
     while not is_num:
@@ -187,6 +189,8 @@ def main():
     elif select_anno == -1:
         quit()
     else:
+        edit_annotation(annotations_list[select_anno-1],annotations_list,select_anno)
+        '''
         confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
         if confirm in ['yes','YES','Yes']:
             split_data.pop(annotations_list[select_anno-1].get_index())
@@ -194,7 +198,63 @@ def main():
             with open(maps_list[select_map],'w') as map_file:
                 map_file.write(new_file)
             print("Annotation deleted")
+            
         else:
             quit()
+            '''
+
+
+def edit_menu(anno):
+    print('----------------------------------------')
+    print('Select a choice (-1 to cancel without Saving)')
+    print('')
+    print('[0] Delete')
+    print('[1] Edit Title (Current: ' + anno.get_title() + ')')
+    print('[2] Edit Description')
+    print('[3] Edit Position (Current: ' + str(anno.get_pos()) + ')')
+    print('[4] Edit Target (Current: ' + str(anno.get_target()) + ')')
+    print('[5] Save and Quit')
+    print()
+
+
+#Pass annotation class obj as parameter
+def edit_annotation(anno,annotations_list,select_anno):
+    edit_menu(anno)
+    
+    choice = raw_input("Enter Choice: ")
+    if choice not in ['-1','0','1','2','3','4','5']:
+        print('Invalid Choice')
+    while(choice not in ['-1','0','1','2','3','4','5']):
+        edit_menu(anno)
+        choice = raw_input("Enter Choice: ")
+            if choice == '1':
+                quit()
+            elif choice =='0':
+                confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
+                if confirm in ['yes','YES','Yes']:
+                    split_data.pop(annotations_list[select_anno-1].get_index())
+                    new_file = '\n'.join([str(x) for x in split_data])
+                    with open(maps_list[select_map],'w') as map_file:
+                        map_file.write(new_file)
+                    print("Annotation deleted")
+                    
+                else:
+                    quit()
+            elif choice == '1':
+                new_title = input_prefill('Edit Title: ',anno.get_title())
+                anno.set_title(new_title)
+                
+
+def input_prefill(prompt, text):
+    def hook():
+        readline.insert_text(text)
+        readline.redisplay()
+    readline.set_pre_input_hook(hook)
+    result = raw_input(prompt)
+    readline.set_pre_input_hook()
+    return result
+
 
 main()
+
+
