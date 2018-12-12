@@ -213,7 +213,7 @@ def edit_menu(anno):
     print('[1] Edit Title (Current: ' + anno.get_title() + ')')
     print('[2] Edit Description (Current : ' + anno.get_desc() + ')')
     print('[3] Edit Position (Current: ' + str(anno.get_pos()) + ')')
-    print('[4] Edit Camera Position (Current: ' + str(anno.get_cpos()) + ')')
+    print('[4] Edit Target (Current: ' + str(anno.get_cpos()) + ')')
     print('[5] Save and Quit')
     print()
 
