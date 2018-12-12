@@ -2,6 +2,7 @@
 import os
 import sys
 import re
+import readline
 from classes.annotation import Annotation
 
 """
