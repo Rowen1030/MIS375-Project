@@ -227,22 +227,22 @@ def edit_annotation(anno,annotations_list,select_anno):
     while(choice not in ['-1','0','1','2','3','4','5']):
         edit_menu(anno)
         choice = raw_input("Enter Choice: ")
-            if choice == '1':
+        if choice == '1':
+            quit()
+        elif choice =='0':
+            confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
+            if confirm in ['yes','YES','Yes']:
+                split_data.pop(annotations_list[select_anno-1].get_index())
+                new_file = '\n'.join([str(x) for x in split_data])
+                with open(maps_list[select_map],'w') as map_file:
+                    map_file.write(new_file)
+                print("Annotation deleted")
+                
+            else:
                 quit()
-            elif choice =='0':
-                confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
-                if confirm in ['yes','YES','Yes']:
-                    split_data.pop(annotations_list[select_anno-1].get_index())
-                    new_file = '\n'.join([str(x) for x in split_data])
-                    with open(maps_list[select_map],'w') as map_file:
-                        map_file.write(new_file)
-                    print("Annotation deleted")
-                    
-                else:
-                    quit()
-            elif choice == '1':
-                new_title = input_prefill('Edit Title: ',anno.get_title())
-                anno.set_title(new_title)
+        elif choice == '1':
+            new_title = input_prefill('Edit Title: ',anno.get_title())
+            anno.set_title(new_title)
                 
 
 def input_prefill(prompt, text):
