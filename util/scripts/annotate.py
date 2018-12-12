@@ -284,7 +284,7 @@ def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data):
         anno.set_target([anno_X,anno_Y,anno_Z])
         edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
     elif choice =='4':
-           is_num=False
+        is_num=False
         while not is_num:
             try:
                 print('Current Camera Position = ' + str(anno.get_cpos))    
