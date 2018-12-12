@@ -2,6 +2,7 @@
 import os
 import sys
 import re
+import readline
 from classes.annotation import Annotation
 
 """
@@ -221,13 +222,13 @@ def edit_menu(anno):
 def edit_annotation(anno,annotations_list,select_anno):
     edit_menu(anno)
     
-    choice = raw_input("Enter Choice: ")
+    choice = str(raw_input("Enter Choice: "))
     if choice not in ['-1','0','1','2','3','4','5']:
         print('Invalid Choice')
     while(choice not in ['-1','0','1','2','3','4','5']):
         edit_menu(anno)
-        choice = raw_input("Enter Choice: ")
-        if choice == '1':
+        choice = str(raw_input("Enter Choice: "))
+        if choice == '-1':
             quit()
         elif choice =='0':
             confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
@@ -242,18 +243,16 @@ def edit_annotation(anno,annotations_list,select_anno):
                 quit()
         elif choice == '1':
             print('test')
-            new_title = input_prefill('Edit Title: ',anno.get_title())
+            new_title = rlinput('Edit Title: ',anno.get_title())
             anno.set_title(new_title)
                 
 
-def input_prefill(prompt, text):
-    def hook():
-        readline.insert_text(text)
-        readline.redisplay()
-    readline.set_pre_input_hook(hook)
-    result = raw_input(prompt)
-    readline.set_pre_input_hook()
-    return result
+def rlinput(prompt, prefill=''):
+    readline.set_startup_hook(lambda: readline.insert_text(prefill))
+    try:
+      return raw_input(prompt)
+    finally:
+      readline.set_startup_hook()
 
 
 main()
