@@ -190,7 +190,7 @@ def main():
     elif select_anno == -1:
         quit()
     else:
-        edit_annotation(annotations_list[select_anno-1],annotations_list,select_anno)
+        edit_annotation(annotations_list[select_anno-1],annotations_list,select_anno,maps_list,split_data)
         '''
         confirm = raw_input("Enter YES to DELETE this annotation. Any other input will cancel the operation: ")    
         if confirm in ['yes','YES','Yes']:
@@ -213,13 +213,14 @@ def edit_menu(anno):
     print('[1] Edit Title (Current: ' + anno.get_title() + ')')
     print('[2] Edit Description')
     print('[3] Edit Position (Current: ' + str(anno.get_pos()) + ')')
-    print('[4] Edit Target (Current: ' + str(anno.get_target()) + ')')
+    print('[4] Edit Camera Position (Current: ' + str(anno.get_cpos()) + ')')
     print('[5] Save and Quit')
     print()
 
 
 #Pass annotation class obj as parameter
-def edit_annotation(anno,annotations_list,select_anno):
+#Recursive!
+def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data):
     edit_menu(anno)
     
     choice = str(raw_input("Enter Choice: "))
@@ -246,7 +247,82 @@ def edit_annotation(anno,annotations_list,select_anno):
         
         new_title = rlinput('Edit Title: ',anno.get_title())
         anno.set_title(new_title)
-        edit_annotation(anno,annotations_list,select_anno)
+        edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
+    elif choice == '2':
+        
+        new_title = rlinput('Edit Description: ',anno.get_desc())
+        anno.set_title(new_title)
+        edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
+    elif choice == '3':
+        is_num=False
+        while not is_num:
+            try:
+            print('Current Position = ' + str(anno.get_pos()))    
+            anno_X = float(input('Enter the X value of your annotation position: '))
+            is_num = True
+        except:
+            print('Error: Invalid Number Choice\n')
+    
+        is_num=False
+        while not is_num:
+            try:
+                print('Current Position = ' + str(anno.get_pos()))      
+                anno_Y = float(input('Enter the Y value of your annotation position: '))
+                is_num = True
+            except:
+                print('Error: Invalid Number Choice\n')
+
+        is_num=False
+        while not is_num:
+            try:
+                print('Current Position = ' + str(anno.get_pos()))     
+                anno_Z = float(input('Enter the Z value of your annotation position: '))
+                is_num = True
+            except:
+                print('Error: Invalid Number Choice\n')
+        anno.set_pos([anno_X,anno_Y,anno_Z])
+        anno.set_target([anno_X,anno_Y,anno_Z])
+        edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
+    elif choice =='4':
+           is_num=False
+        while not is_num:
+            try:
+                print('Current Camera Position = ' + str(anno.get_cpos))    
+                cam_X = float(input('Enter the X value of your Camera Position: '))
+                is_num = True
+            except:
+                print('Error: Invalid Number Choice\n')
+
+        is_num=False
+        while not is_num:
+            try:
+                print('Current Camera Position = ' + str(anno.get_cpos))    
+                cam_Y = float(input('Enter the Y value of your Camera Position: '))
+                is_num = True
+            except:
+                print('Error: Invalid Number Choice\n')
+
+        is_num=False
+        while not is_num:
+            try:
+                print('Current Camera Position = ' + str(anno.get_cpos))    
+                cam_Z = float(input('Enter the Z value of your Camera Position: '))
+                is_num = True
+            except:
+                print('Error: Invalid Number Choice\n')
+        
+        anno.set_cpos([cam_X,cam_Y,cam_Z])
+        edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
+    elif choice == '5':
+        split_data[annotations_list[select_anno-1].get_index()] = anno.generate_js()
+            new_file = '\n'.join([str(x) for x in split_data])
+            with open(maps_list[select_map],'w') as map_file:
+                map_file.write(new_file)
+            print('Annotation Edited')
+
+
+
+
                 
 
 def rlinput(prompt, prefill=''):
