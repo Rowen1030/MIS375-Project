@@ -90,7 +90,7 @@ def get_annotation():
     anno_title = raw_input('Enter the title of your annotation: ')
     anno_desc = raw_input('Enter the description of your annotation: ')
     
-    is_num=False
+    """ is_num=False
     while not is_num:
         try:    
             camTarg_X = float(input('Enter the X value of your Camera Target Position: '))
@@ -112,9 +112,9 @@ def get_annotation():
             camTarg_Z = float(input('Enter the Z value of your Camera Target Position: '))
             is_num = True
         except:
-            print('Error: Invalid Number Choice\n')
+            print('Error: Invalid Number Choice\n') """
 
-    return Annotation([anno_X,anno_Y,anno_Z],[cam_X,cam_Y,cam_Z],[camTarg_X,camTarg_Y,camTarg_Z],anno_title,anno_desc,5)
+    return Annotation([anno_X,anno_Y,anno_Z],[cam_X,cam_Y,cam_Z],[anno_X,anno_Y,anno_Z],anno_title,anno_desc,5)
 
 
 def get_maps():
