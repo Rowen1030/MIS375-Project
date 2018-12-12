@@ -243,9 +243,10 @@ def edit_annotation(anno,annotations_list,select_anno):
         else:
             quit()
     elif choice == '1':
-        print('test')
+        
         new_title = rlinput('Edit Title: ',anno.get_title())
         anno.set_title(new_title)
+        edit_annotation(anno,annotations_list,select_anno)
                 
 
 def rlinput(prompt, prefill=''):
