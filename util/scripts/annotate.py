@@ -242,18 +242,16 @@ def edit_annotation(anno,annotations_list,select_anno):
                 quit()
         elif choice == '1':
             print('test')
-            new_title = input_prefill('Edit Title: ',anno.get_title())
+            new_title = rlinput('Edit Title: ',anno.get_title())
             anno.set_title(new_title)
                 
 
-def input_prefill(prompt, text):
-    def hook():
-        readline.insert_text(text)
-        readline.redisplay()
-    readline.set_pre_input_hook(hook)
-    result = raw_input(prompt)
-    readline.set_pre_input_hook()
-    return result
+def rlinput(prompt, prefill):
+       readline.set_startup_hook(lambda: readline.insert_text(prefill))
+   try:
+      return raw_input(prompt)
+   finally:
+      readline.set_startup_hook()
 
 
 main()
