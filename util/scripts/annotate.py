@@ -315,10 +315,10 @@ def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data):
         edit_annotation(anno,annotations_list,select_anno,maps_list,split_data)
     elif choice == '5':
         split_data[annotations_list[select_anno-1].get_index()] = anno.generate_js()
-            new_file = '\n'.join([str(x) for x in split_data])
-            with open(maps_list[select_map],'w') as map_file:
-                map_file.write(new_file)
-            print('Annotation Edited')
+        new_file = '\n'.join([str(x) for x in split_data])
+        with open(maps_list[select_map],'w') as map_file:
+            map_file.write(new_file)
+        print('Annotation Edited')
 
 
 
