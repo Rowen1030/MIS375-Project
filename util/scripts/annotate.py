@@ -13,7 +13,7 @@ Script Purpose: Easily manage annotations for your interfaces
 #Directory Information
 maps_dir = "../../interfaces/"
 
-
+#String parse with regex to construct list of annotation class objects
 def get_annotations(map_data):
     annotation_list = []
     for line in map_data:
@@ -37,7 +37,7 @@ def annotations_menu(annotations_list):
     for anno in annotations_list:
         print('\t[' + str(annotations_list.index(anno)+1) + ']' + '\t' + anno.get_title()) 
 
-
+#Construct new annotation object
 def get_annotation():
 
     is_num=False
@@ -119,7 +119,7 @@ def get_annotation():
 
     return Annotation([anno_X,anno_Y,anno_Z],[cam_X,cam_Y,cam_Z],[anno_X,anno_Y,anno_Z],anno_title,anno_desc,5)
 
-
+#scan Directory info to get list of maps
 def get_maps():
     exclude = set(['libs','pointclouds'])
     maps_list = []
@@ -324,7 +324,7 @@ def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data,selec
 
 
                 
-
+#Function to have default input value, ONLY WORKS ON LINUX
 def rlinput(prompt, prefill=''):
     readline.set_startup_hook(lambda: readline.insert_text(prefill))
     try:
