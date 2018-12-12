@@ -222,12 +222,12 @@ def edit_menu(anno):
 def edit_annotation(anno,annotations_list,select_anno):
     edit_menu(anno)
     
-    choice = raw_input("Enter Choice: ")
+    choice = str(raw_input("Enter Choice: "))
     if choice not in ['-1','0','1','2','3','4','5']:
         print('Invalid Choice')
     while(choice not in ['-1','0','1','2','3','4','5']):
         edit_menu(anno)
-        choice = raw_input("Enter Choice: ")
+        choice = str(raw_input("Enter Choice: "))
         if choice == '1':
             quit()
         elif choice =='0':
