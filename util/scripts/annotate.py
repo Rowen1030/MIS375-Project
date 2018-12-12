@@ -257,9 +257,9 @@ def edit_annotation(anno,annotations_list,select_anno,maps_list,split_data):
         is_num=False
         while not is_num:
             try:
-            print('Current Position = ' + str(anno.get_pos()))    
-            anno_X = float(input('Enter the X value of your annotation position: '))
-            is_num = True
+                print('Current Position = ' + str(anno.get_pos()))    
+                anno_X = float(input('Enter the X value of your annotation position: '))
+                is_num = True
         except:
             print('Error: Invalid Number Choice\n')
     
