@@ -247,12 +247,12 @@ def edit_annotation(anno,annotations_list,select_anno):
             anno.set_title(new_title)
                 
 
-def rlinput(prompt, prefill):
-    readline.set_startup_hook(lambda: readline.insert_text(prefill))
-    try:
-        return raw_input(prompt)
-    finally:
-        readline.set_startup_hook()
+def rlinput(prompt, prefill=''):
+       readline.set_startup_hook(lambda: readline.insert_text(prefill))
+   try:
+      return raw_input(prompt)
+   finally:
+      readline.set_startup_hook()
 
 
 main()
